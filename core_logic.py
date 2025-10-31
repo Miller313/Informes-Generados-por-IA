@@ -10,7 +10,7 @@ from PIL import Image
 
 # --- CONFIGURACIÓN Y AUTENTICACIÓN (NUEVA VERSIÓN PARA LA NUBE) ---
 SCOPES = ['https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/documents', 'https://www.googleapis.com/auth/cloud-platform']
-PROJECT_ID = "ia-report-generator" # O el ID de tu nuevo proyecto en la nube
+PROJECT_ID = "app-informes-nube" # O el ID de tu nuevo proyecto en la nube
 LOCATION = "us-east1"
 
 def get_credentials():
@@ -110,4 +110,5 @@ def create_google_doc_report(template_id, parent_folder_id, client_name, equipme
         doc_url = f"https.google.com/document/d/{document_id}/edit"
         return doc_url, None
     except Exception as e:
+
         return None, f"Ocurrió un error con Google Docs/Drive: {e}"
